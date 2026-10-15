@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Experiência AR 1</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+  <!-- AR.js para A-Frame -->
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+  <a-scene
+    embedded
+    arjs="sourceType: webcam;">
+
+    <a-text
+  value="Olá, realidade aumentada!"
+  position="-1 1.5 0"
+  color="black">
+</a-text>
+
+    <!-- Objeto 3D apresentado sobre o marcador -->
+    <a-box
+      position="0 0.5 0"
+      rotation="0 45 0"
+      color="#4CC3D9"
+      animation="property: rotation; to: 0 405 0; loop: true; dur: 5000">
+    </a-box>
+
+    <!-- Marcador Hiro -->
+    <a-marker-camera preset="hiro"></a-marker-camera>
+
+  </a-scene>
+
+</body>
+</html>
