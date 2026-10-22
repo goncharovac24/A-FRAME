@@ -39,8 +39,25 @@
         look-controls="enabled: false">
       </a-camera>
 
-      <!-- ANCHOR 1: imagem do dinossauro -->
+      <!-- ANCHOR 1: imagem da Ballerina Cappucina -->
 <a-entity mindar-image-target="targetIndex: 0">
+  <a-sphere
+    color="#8A2BE2"
+    radius="0.3"
+    position="0 0 0.2">
+  </a-sphere>
+
+  <a-text
+    value="Ballerina Cappucina!"
+    color="#FFFFFF"
+    align="center"
+    position="0 0.6 0"
+    scale="0.5 0.5 0.5">
+  </a-text>
+</a-entity>
+
+      <!-- ANCHOR 2: imagem do dinossauro -->
+<a-entity mindar-image-target="targetIndex: 1">
   <a-gltf-model
     src="#dinosaur"
     animation-mixer="clip: Open"
@@ -54,23 +71,6 @@
     position="0 0.8 0"
     align="center"
     color="#ff0000"
-    scale="0.5 0.5 0.5">
-  </a-text>
-</a-entity>
-
-<!-- ANCHOR 2: imagem da Ballerina Cappucina -->
-<a-entity mindar-image-target="targetIndex: 1">
-  <a-sphere
-    color="#8A2BE2"
-    radius="0.3"
-    position="0 0 0.2">
-  </a-sphere>
-
-  <a-text
-    value="Ballerina Cappucina!"
-    color="#FFFFFF"
-    align="center"
-    position="0 0.6 0"
     scale="0.5 0.5 0.5">
   </a-text>
 </a-entity>
