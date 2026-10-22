@@ -1,58 +1,83 @@
-
 <!DOCTYPE html>
 <html lang="pt">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Image Tracking - Realidade Aumentada</title>
 
+    <!-- A-Frame -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+    <!-- MindAR: reconhecimento de imagens -->
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+    <!-- Animações de modelos 3D -->
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
   </head>
 
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: https://acspt.github.io/A-FRAME/ar/image/detect-spinosaurus-mindar/assets/targets-spinosaurus.glb.mind;"
+      mindar-image="imageTargetSrc: ./targets.mind;"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
     >
+
+      <!-- Modelo 3D do dinossauro -->
       <a-assets timeout="60000">
         <a-asset-item
           id="dinosaur"
-          src="https://acspt.github.io/A-FRAME/ar/image/detect-spinosaurus-mindar/assets/spinosaurus.glb"
-        ></a-asset-item>
+          src="https://acspt.github.io/A-FRAME/ar/image/detect-spinosaurus-mindar/assets/spinosaurus.glb">
+        </a-asset-item>
       </a-assets>
 
+      <!-- Câmara -->
       <a-camera
         position="0 0 0"
-        look-controls="enabled: false"
-      ></a-camera>
+        look-controls="enabled: false">
+      </a-camera>
 
-      <!-- Objetos associados à imagem reconhecida -->
+      <!-- ANCHOR 1: imagem do T-Rex -->
       <a-entity mindar-image-target="targetIndex: 0">
-
-        <!-- Modelo 3D animado -->
         <a-gltf-model
           src="#dinosaur"
           animation-mixer="clip: Open"
           position="0 0 0"
           scale="0.1 0.1 0.1"
-          rotation="0 90 0"
-        ></a-gltf-model>
+          rotation="0 90 0">
+        </a-gltf-model>
 
-        <!-- Texto adicional -->
         <a-text
-          value="Dinossauro!"
+          value="RAWR!"
           position="0 0.8 0"
           align="center"
           color="#ff0000"
-          scale="0.5 0.5 0.5"
-        ></a-text>
+          scale="0.5 0.5 0.5">
+        </a-text>
 
       </a-entity>
+
+      <!-- ANCHOR 2: segunda imagem -->
+      <a-entity mindar-image-target="targetIndex: 1">
+
+        <a-sphere
+          color="#8A2BE2"
+          radius="0.3"
+          position="0 0 0.2">
+        </a-sphere>
+
+        <a-text
+          value="Ballerina Cappucina!"
+          color="#FFFFFF"
+          align="center"
+          position="0 0.6 0"
+          scale="0.5 0.5 0.5">
+        </a-text>
+
+      </a-entity>
+
     </a-scene>
   </body>
 </html>
