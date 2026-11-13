@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>11 - JSON Model</title>
+
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+  <script src="https://unpkg.com/aframe-extras.json-model@3.8.3/dist/aframe-extras.json-model.min.js"></script>
+</head>
+
+<body>
+<a-scene background="color: #101525">
+
+  <a-sky color="#101525"></a-sky>
+
+  <a-entity light="type: ambient; intensity: 1.5"></a-entity>
+  <a-entity light="type: directional; intensity: 2"
+    position="2 5 3"></a-entity>
+
+  <a-plane rotation="-90 0 0"
+    width="20" height="20" color="#202C45">
+  </a-plane>
+
+  <a-text value="JSON 3D MODEL"
+    position="-1.5 3 -4"
+    color="#00E5FF" width="5">
+  </a-text>
+
+  <!-- Modelo JSON externo -->
+  <a-entity
+    json-model="src: url(models/model.json)"
+    position="0 1 -4"
+    scale="1 1 1"
+    rotation="0 180 0">
+  </a-entity>
+
+  <a-camera position="0 2 5"
+    look-at="0 1 -4">
+  </a-camera>
+
+</a-scene>
+</body>
+</html>

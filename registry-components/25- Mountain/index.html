@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>25 - Mountain</title>
+
+  <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-mountain-component@0.3.3/dist/aframe-mountain-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-entity position="0 2 8">
+      <a-camera></a-camera>
+    </a-entity>
+
+    <a-mountain
+      color="#795548"
+      position="0 0 -5"
+      scale="2 2 2">
+    </a-mountain>
+
+    <a-sky color="#87CEEB"></a-sky>
+
+    <a-entity
+      light="type: directional; color: #FFFFFF; intensity: 0.8"
+      position="-3 8 5">
+    </a-entity>
+  </a-scene>
+</body>
+</html>

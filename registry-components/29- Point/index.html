@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>29 - Point</title>
+
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-point-component@1.1.1/dist/aframe-point-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: #101020">
+
+    <a-entity position="0 1.6 0">
+      <a-camera></a-camera>
+    </a-entity>
+
+    <a-text
+      value="Point Component"
+      position="-1.5 2.5 -4"
+      color="#FFFFFF"
+      width="5">
+    </a-text>
+
+    <a-entity
+      id="pointCloud"
+      position="0 1 -4"
+      point="size: 4; color: #00FFFF; perspective: false">
+    </a-entity>
+
+    <a-sky color="#101020"></a-sky>
+  </a-scene>
+
+  <script>
+    const pointCloud = document.querySelector("#pointCloud");
+
+    pointCloud.addEventListener("componentinitialized", function (event) {
+      if (event.detail.name === "point") {
+        pointCloud.components.point.setPoints([
+          [-1, 0, 0],
+          [-0.5, 0.5, 0],
+          [0, 0, 0],
+          [0.5, -0.5, 0],
+          [1, 0, 0],
+          [0, 1, 0],
+          [0, -1, 0]
+        ]);
+      }
+    });
+  </script>
+</body>
+</html>

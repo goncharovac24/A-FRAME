@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>41 - Text Geometry</title>
+
+  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aframe-text-geometry-component@0.5.2/dist/aframe-text-geometry-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: #172033">
+
+    <a-assets>
+      <a-asset-item
+        id="font"
+        src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r110/examples/fonts/helvetiker_bold.typeface.json">
+      </a-asset-item>
+    </a-assets>
+
+    <a-entity position="0 1.6 0">
+      <a-camera></a-camera>
+    </a-entity>
+
+    <a-text
+      value="Text Geometry"
+      position="-1.5 2.5 -5"
+      color="#FFFFFF"
+      width="5">
+    </a-text>
+
+    <!-- Texto 3D -->
+    <a-entity
+      position="-2 1 -4"
+      rotation="0 0 0"
+      text-geometry="
+        value: A-FRAME;
+        font: #font;
+        size: 0.6;
+        height: 0.15;
+        bevelEnabled: true;
+        bevelSize: 0.02;
+        bevelThickness: 0.02"
+      material="color: #4CC9F0; metalness: 0.3; roughness: 0.4">
+    </a-entity>
+
+    <a-sky color="#172033"></a-sky>
+  </a-scene>
+</body>
+</html>

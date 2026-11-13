@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>32 - Room</title>
+
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: #202b3d">
+
+    <a-entity
+      position="0 1.6 5"
+      camera
+      look-controls>
+    </a-entity>
+
+    <!-- Primeira divisão -->
+    <rw-room
+      position="-2 0 -2"
+      material="color: #6688AA">
+
+      <rw-wall position="4 0 0"></rw-wall>
+      <rw-wall position="4 0 4"></rw-wall>
+      <rw-wall position="0 0 4"></rw-wall>
+      <rw-wall position="0 0 0"></rw-wall>
+
+    </rw-room>
+
+    <!-- Segunda divisão -->
+    <rw-room
+      position="2 0 -2"
+      material="color: #887766">
+
+      <rw-wall position="0 0 0"></rw-wall>
+      <rw-wall position="0 0 4"></rw-wall>
+      <rw-wall position="-4 0 4"></rw-wall>
+      <rw-wall position="-4 0 0"></rw-wall>
+
+    </rw-room>
+
+    <a-sky color="#202b3d"></a-sky>
+  </a-scene>
+</body>
+</html>

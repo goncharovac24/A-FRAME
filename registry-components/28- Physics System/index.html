@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>28 - Physics System</title>
+
+  <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/@c-frame/aframe-physics-system@4.2.3/dist/aframe-physics-system.min.js"></script>
+</head>
+
+<body>
+  <a-scene physics="driver: cannon; debug: true">
+
+    <a-entity position="0 1.6 5">
+      <a-camera></a-camera>
+    </a-entity>
+
+    <a-text
+      value="Physics System"
+      position="-1.5 3 -4"
+      color="#FFFFFF"
+      width="5">
+    </a-text>
+
+    <a-box
+      position="-1 4 -4"
+      color="#4CC9F0"
+      dynamic-body>
+    </a-box>
+
+    <a-box
+      position="1 5 -4"
+      color="#F72585"
+      dynamic-body>
+    </a-box>
+
+    <a-box
+      position="0 6 -4"
+      color="#FFD166"
+      dynamic-body>
+    </a-box>
+
+    <a-plane
+      position="0 0 -4"
+      rotation="-90 0 0"
+      width="8"
+      height="8"
+      color="#35465c"
+      static-body>
+    </a-plane>
+
+    <a-sky color="#172033"></a-sky>
+  </a-scene>
+</body>
+</html>

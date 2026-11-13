@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>03 - Audioanalyser</title>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-audioanalyser-component@3.0.1/dist/aframe-audioanalyser-component.min.js"></script>
+</head>
+<body>
+
+<a-scene background="color: #090916">
+
+  <a-sky color="#090916"></a-sky>
+
+  <a-entity light="type: ambient; intensity: 1"></a-entity>
+
+  <a-plane rotation="-90 0 0" width="20" height="20"
+    color="#17152D"></a-plane>
+
+  <a-assets>
+    <audio id="music" src="music.mp3" preload="auto"></audio>
+  </a-assets>
+
+  <a-entity id="audio"
+    sound="src: #music; autoplay: false; loop: true"
+    audioanalyser="src: #music">
+  </a-entity>
+
+  <!-- Visualização decorativa -->
+  <a-entity id="bars">
+    <a-box position="-3 0.5 -4" width="0.35" height="1" depth="0.35"
+      color="#00E5FF"
+      animation="property: scale; to: 1 2.5 1; dir: alternate; dur: 500; loop: true"></a-box>
+
+    <a-box position="-2 0.5 -4" width="0.35" height="1" depth="0.35"
+      color="#00E5FF"
+      animation="property: scale; to: 1 3 1; dir: alternate; dur: 700; loop: true"></a-box>
+
+    <a-box position="-1 0.5 -4" width="0.35" height="1" depth="0.35"
+      color="#8B5CF6"
+      animation="property: scale; to: 1 2 1; dir: alternate; dur: 400; loop: true"></a-box>
+
+    <a-box position="0 0.5 -4" width="0.35" height="1" depth="0.35"
+      color="#FF4FD8"
+      animation="property: scale; to: 1 3.5 1; dir: alternate; dur: 600; loop: true"></a-box>
+
+    <a-box position="1 0.5 -4" width="0.35" height="1" depth="0.35"
+      color="#8B5CF6"
+      animation="property: scale; to: 1 2 1; dir: alternate; dur: 800; loop: true"></a-box>
+
+    <a-box position="2 0.5 -4" width="0.35" height="1" depth="0.35"
+      color="#00E5FF"
+      animation="property: scale; to: 1 3 1; dir: alternate; dur: 550; loop: true"></a-box>
+
+    <a-box position="3 0.5 -4" width="0.35" height="1" depth="0.35"
+      color="#00E5FF"
+      animation="property: scale; to: 1 2.5 1; dir: alternate; dur: 650; loop: true"></a-box>
+  </a-entity>
+
+  <a-text value="AUDIO VISUALIZER" position="-2 4 -4"
+    color="#FFFFFF" width="6"></a-text>
+
+  <a-camera position="0 3 7" look-at="0 1 -4"></a-camera>
+
+</a-scene>
+
+<button onclick="document.querySelector('#audio').components.sound.playSound()">
+  PLAY MUSIC
+</button>
+
+</body>
+</html>

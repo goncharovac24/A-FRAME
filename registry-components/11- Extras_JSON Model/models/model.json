@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "formatVersion": 3
+  },
+  "vertices": [
+    -1, 0, 0,
+     1, 0, 0,
+     0, 2, 0
+  ],
+  "faces": [],
+  "materials": []
+}

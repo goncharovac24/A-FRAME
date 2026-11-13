@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>07 - Environment</title>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+<a-scene>
+  <a-entity environment="
+    preset: forest;
+    dressingAmount: 80;
+    dressingScale: 5;
+    ground: hills;
+    groundColor: #315C35;
+    skyColor: #87CEEB;
+    fog: 0.4">
+  </a-entity>
+
+  <a-text value="MAGICAL FOREST"
+    position="-1.5 3 -4"
+    color="#FFFFFF"
+    width="5">
+  </a-text>
+
+  <a-camera position="0 1.6 5"
+    wasd-controls look-controls>
+  </a-camera>
+</a-scene>
+</body>
+</html>

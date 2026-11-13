@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>38 - Stereo</title>
+
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-stereo-component@1.4.0/dist/aframe-stereo-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: #172033">
+
+    <a-entity
+      camera
+      position="0 1.6 0"
+      stereocam="eye: left">
+    </a-entity>
+
+    <a-text
+      value="Stereo Component"
+      position="-1.5 2.5 -4"
+      color="#FFFFFF"
+      width="5">
+    </a-text>
+
+    <!-- Objeto apresentado ao olho esquerdo -->
+    <a-box
+      position="-1 1 -4"
+      color="#4CC9F0"
+      stereo="eye: left">
+    </a-box>
+
+    <!-- Objeto apresentado ao olho direito -->
+    <a-box
+      position="1 1 -4"
+      color="#F72585"
+      stereo="eye: right">
+    </a-box>
+
+    <a-sky color="#172033"></a-sky>
+  </a-scene>
+</body>
+</html>
